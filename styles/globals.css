@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a,
+button {
+    transition: all .2s;
+}
+
+.orange {
+    @apply bg-orange-300 rounded-md px-1 m-1 box-border
+}
+
+.blue {
+    @apply bg-blue-300 rounded-md px-1 m-1 box-border
+}
+
+.purple {
+    @apply bg-purple-300 rounded-md px-1 m-1 box-border
+}
+
+.green {
+    @apply bg-green-300 rounded-md px-1 m-1 box-border
+}
+
+.yellow {
+    @apply bg-yellow-300 rounded-md px-1 m-1 box-border
+}
+
+.gray {
+    @apply bg-gray-300 rounded-md px-1 m-1 box-border
+}
+
+.pink {
+    @apply bg-pink-300 rounded-md px-1 m-1 box-border
+}
+
+.default {
+    @apply bg-stone-300 rounded-md px-1 m-1 box-border
+}
+
+.red {
+    @apply bg-red-300 rounded-md px-1 m-1 box-border
+}
+
+.brown {
+    @apply bg-emerald-300 rounded-md px-1 m-1 box-border
+}

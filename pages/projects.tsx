@@ -1,15 +1,22 @@
 import Layout from "@/components/Layout"
 import { TOKEN, DATABASE_ID } from '../config/index'
+import ProjectItem from '../components/projects/item';
 
-export default function Projects() {
+export default function Projects({ projectDatas }: any) {
     return (
         <Layout>
-            <h2>프로젝트 페이지</h2>
+            <h2 className="text-center text-4xl mt-10 mb-5"><span className="text-purple-500">{projectDatas.results.length}</span> Projects</h2>
+
+            <section className="grid grid-cols-1 gap-1 mx-auto p-2 md:grid-cols-2 xl:grid-cols-3 xl:w-11/12 2xl:w-11/12" >
+                {projectDatas.results.map((aProject: any) => (
+                    <ProjectItem key={aProject.id} data={aProject} />
+                ))}
+            </section>
         </Layout>
     )
 }
 
-// 빌드 타임에 호출 - 서버쪽 처리
+// 빌드 타임에 호출 - 서버에서 처리
 export async function getStaticProps() {
     const options = {
         method: 'POST',
@@ -32,15 +39,9 @@ export async function getStaticProps() {
 
     const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options);
 
-    const projectNames = await res.json();
-
-    const projectID = projectNames.results.map((aProject: any) => (
-        // aProject.properties.Github.url
-        aProject.properties.Title.title[0].plain_text
-    ))
-    console.log(`projectID : ${projectID}`);
+    const projectDatas = await res.json();
 
     return {
-        props: {}, // will be passed to the page component as props
+        props: { projectDatas }, // will be passed to the page component as props
     }
 }
