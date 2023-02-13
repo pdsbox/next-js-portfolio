@@ -50,12 +50,13 @@ export default function ProjectItem({ data }: any) {
                     width="1080"
                     height="750"
                     quality={100}
+                    priority
                 />
             </div>
             <h3 className="mt-8 font-semibold text-lg text-slate-700">{title}</h3>
             <div className="lg:pl-4 pr-2">
                 <p className="my-4 text-slate-600">{description}</p>
-                <a className="my-4 text-neutral-400 hover:text-neutral-500" href={github} target="_blank">
+                <a className="my-4 text-neutral-400 hover:text-neutral-500" href={github} rel="noreferrer" target="_blank">
                     <i className="xi-github xi-x" />
                     View Code
                 </a>
