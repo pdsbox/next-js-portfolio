@@ -5,9 +5,12 @@ import ProjectItem from '../components/projects/item';
 export default function Projects({ projectDatas }: any) {
     return (
         <Layout>
-            <h2 className="text-center text-4xl mt-10 mb-5"><span className="text-purple-500">{projectDatas.results.length}</span> Projects</h2>
+            <h2 className="text-center text-4xl mt-10 mb-5">
+                <span className="text-purple-500">{projectDatas.results.length}</span>
+                Projects
+            </h2>
 
-            <section className="grid grid-cols-1 gap-1 mx-auto p-2 md:grid-cols-2 xl:grid-cols-3 xl:w-11/12 2xl:w-11/12" >
+            <section className="grid grid-cols-1 gap-1 mx-auto p-2 md:grid-cols-2 xl:grid-cols-3 xl:w-10/12 2xl:w-9/12" >
                 {projectDatas.results.map((aProject: any) => (
                     <ProjectItem key={aProject.id} data={aProject} />
                 ))}

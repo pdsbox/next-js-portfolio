@@ -7,6 +7,10 @@ button {
     transition: all .2s;
 }
 
+img {
+    transition: all .3s;
+}
+
 .orange {
     @apply bg-orange-300 rounded-md px-1 m-1 box-border
 }
