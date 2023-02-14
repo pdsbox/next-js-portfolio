@@ -7,6 +7,7 @@ export default function ProjectItem({ data }: any) {
     const tags = data.properties.Tags.multi_select;
     const imgSrc = data.cover.external.url;
     const period = data.properties.WorkPeriod.date;
+    const shortCutLink = data.properties.URL.url
 
     //작업기간 계산 함수 인자 : 시작기간, 종료기간
     const calculationDate = (start: any, end: any): number => {
@@ -44,16 +45,19 @@ export default function ProjectItem({ data }: any) {
     return (
         <article className="my-5 p-4 text-left w-full">
             <div className="mx-auto rounded-lg overflow-hidden">
-                <Image className="w-full h-[433px] object-cover hover:scale-110"
-                    alt="cover image"
-                    src={imgSrc}
-                    width="1600"
-                    height="1000"
-                    quality={100}
-                    priority
-                />
+                <a href={shortCutLink} target="_blank" rel="noreferrer">
+                    <Image className="w-full h-[433px] object-cover hover:scale-110"
+                        alt="cover image"
+                        src={imgSrc}
+                        width="1600"
+                        height="1000"
+                        quality={100}
+                        priority
+                    ></Image>
+                </a>
             </div>
-            <h3 className="mt-8 font-semibold text-lg text-slate-700">{title}</h3>
+
+            <h3 className="mt-8 font-semibold text-lg text-slate-700"><a href={shortCutLink} target="_blank" rel="noreferrer">{title}</a></h3>
             <div className="lg:pl-4 pr-2">
                 <p className="my-4 text-slate-600">{description}</p>
                 <a className="my-4 text-neutral-400 hover:text-neutral-500" href={github} rel="noreferrer" target="_blank">
