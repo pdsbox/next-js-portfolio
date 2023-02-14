@@ -44,11 +44,11 @@ export default function ProjectItem({ data }: any) {
     return (
         <article className="my-5 p-4 text-left w-full">
             <div className="mx-auto rounded-lg overflow-hidden">
-                <Image className="w-full sm:max-h-[433px] object-cover hover:scale-110"
+                <Image className="w-full h-[433px] object-cover hover:scale-110"
                     alt="cover image"
                     src={imgSrc}
-                    width="1080"
-                    height="750"
+                    width="1600"
+                    height="1000"
                     quality={100}
                     priority
                 />
