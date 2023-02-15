@@ -3,7 +3,7 @@ import { TOKEN, DATABASE_ID } from '../config/index'
 import ProjectItem from '../components/projects/item';
 
 export default function Projects({ projectDatas }: any) {
-    console.log(projectDatas)
+    // console.log(projectDatas)
     return (
         <Layout>
             <h2 className="text-center text-4xl mt-10 mb-5">
