@@ -5,7 +5,7 @@ export default function ProjectItem({ data }: any) {
     const description = data.properties.Description.rich_text[0].plain_text;
     const github = data.properties.Github.url;
     const tags = data.properties.Tags.multi_select;
-    const imgSrc = data.cover.external.url;
+    const imgSrc = data.cover.external?.url || data.cover.file.url;
     const period = data.properties.WorkPeriod.date;
     const shortCutLink = data.properties.URL.url
 
